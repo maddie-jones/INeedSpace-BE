@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.nasa.gov/planetary/apod?api_key=jdCci90zMTb076TOrfTGriiH1nCEcLqJGNUXhRHP
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Sat, 13 Apr 2019 16:45:23 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '929'
+      Connection:
+      - keep-alive
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '998'
+      Via:
+      - 1.1 vegur, http/1.1 api-umbrella (ApacheTrafficServer [cMsSf ])
+      Age:
+      - '0'
+      X-Cache:
+      - MISS
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; preload
+    body:
+      encoding: UTF-8
+      string: '{"copyright":"Roberto\nColombari","date":"2019-04-13","explanation":"Rigil
+        Kentaurus is the bright star near the top of this broad southern skyscape.
+        Of course it''s probably better known as Alpha Centauri, nearest star system
+        to the Sun. Below it sprawls a dark nebula complex. The obscuring interstellar
+        dust clouds include Sandqvist catalog clouds 169 and 172 in silhouette against
+        the rich starfields along the southern Milky Way. Rigil Kent is a mere 4.37
+        light-years away, but the dusty dark nebulae lie at the edge of the starforming
+        Circinus-West molecular cloud about 2,500 light-years distant. The wide-field
+        of view spans over 12 degrees (24 full moons) across southern skies.","hdurl":"https://apod.nasa.gov/apod/image/1904/sandqvist169_colombari.jpg","media_type":"image","service_version":"v1","title":"Rigil
+        Kentaurus and Sandqvist 169","url":"https://apod.nasa.gov/apod/image/1904/sandqvist169_colombari1024.jpg"}
+
+'
+    http_version: 
+  recorded_at: Sat, 13 Apr 2019 16:45:19 GMT
+recorded_with: VCR 4.0.0
