@@ -8,9 +8,9 @@ describe 'Favorites API' do
       hdurl: 'hdstar.image.com',
       explanation: 'a picture of the galaxy'
     }
-    post '/api/v1/favorites', params: params
+    post '/api/v1/favorites', params: {favorite: params}
 
-    apod_json = JSON.parse(response.body)
-    expect(response).to be_successful
+    favorite_json = JSON.parse(response.body)
+    expect(response).to have_http_status(:created)
   end
 end
