@@ -1,8 +1,8 @@
 class ApodService
-  def self.day_image
+  def self.day_image(nasa_api_key)
     conn = Faraday.new(url: 'https://api.nasa.gov') do |faraday|
       faraday.adapter  Faraday.default_adapter
-      faraday.params[:api_key] = ENV['NASA_API_KEY']
+      faraday.params[:api_key] = nasa_api_key
     end
     response = conn.get('/planetary/apod')
     JSON.parse(response.body, symbolize_names: true)

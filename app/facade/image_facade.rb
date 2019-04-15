@@ -1,12 +1,6 @@
 class ImageFacade
-  def day_image
-    data = ApodService.day_image
+  def day_image(nasa_api_key)
+    data = ApodService.day_image(nasa_api_key)
     Image.new(data)
-  end
-
-  private
-
-  def service
-    ApodService.day_image
   end
 end
