@@ -5,6 +5,6 @@ class ImagesearchFacade
 
   def search_images
     data = NasaImageService.search_images(@query)
-    SearchImages.new(data)
+    SearchImage.new(data).search_images
   end
 end

@@ -1,6 +1,7 @@
 class Api::V1::ImagesearchController < ApplicationController
   def index
-    facade = ImagesearchFacade.new(params[:q])
-    render json: ImagesearchSerializer.new(facade)
+    images = ImagesearchFacade.new(params[:q]).search_images
+    binding.pry
+    render json: ImagesearchSerializer.new(images)
   end
 end
