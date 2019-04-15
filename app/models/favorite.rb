@@ -2,5 +2,6 @@ class Favorite < ApplicationRecord
   validates_presence_of :title,
                         :url,
                         :hdurl,
-                        :explanation
+                        :explanation,
+                        :media_type
 end
