@@ -5,7 +5,7 @@ class Api::V1::FavoritesController < ApplicationController
     favorites = Favorite.all
     render status: :ok, json: FavoritesSerializer.new(favorites)
   end
-  
+
   def create
     if favorite_params
       favorite = Favorite.create(favorite_params)
@@ -18,6 +18,6 @@ class Api::V1::FavoritesController < ApplicationController
   private
 
   def favorite_params
-    params.permit(:title, :hdurl, :url, :explanation)
+    params.permit(:title, :hdurl, :url, :explanation, :media_type)
   end
 end

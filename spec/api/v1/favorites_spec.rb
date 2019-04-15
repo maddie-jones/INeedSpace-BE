@@ -23,10 +23,10 @@ describe 'Favorites API' do
       title: 'galaxy',
       url: 'star.image.com',
       hdurl: 'hdstar.image.com',
-      explanation: 'a picture of the galaxy'
+      explanation: 'a picture of the galaxy',
+      media_type: 'image'
     }
     post '/api/v1/favorites', params: params
-
     favorite_json = JSON.parse(response.body)
     expect(response).to have_http_status(:created)
 
