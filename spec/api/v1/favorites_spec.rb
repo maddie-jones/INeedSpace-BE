@@ -38,7 +38,6 @@ describe 'Favorites API' do
 
     delete "/api/v1/favorites/#{favorite_1.id}"
 
-    deleted_json = JSON.parse(response.body)
     expect(response).to have_http_status(204)
   end
 end

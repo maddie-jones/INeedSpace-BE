@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       get 'imagesearch', to:'imagesearch#index'
       post 'favorites', to:'favorites#create'
       get 'favorites', to:'favorites#index'
+      delete 'favorites/:id', to:'favorites#destroy'
     end
   end
 end
