@@ -32,4 +32,13 @@ describe 'Favorites API' do
 
     expect(favorite_json["data"]["attributes"]["title"]).to eq("galaxy")
   end
+
+  it 'should delete favorite by id' do
+    favorite_1 = Favorite.create(title: "star_1", url: "star_img_1.com", hdurl: "star_img_hd_1", explanation: "good photo of star 1", media_type: "image")
+
+    delete "/api/v1/favorites/#{favorite_1.id}"
+
+    deleted_json = JSON.parse(response.body)
+    expect(response).to have_http_status(204)
+  end
 end
