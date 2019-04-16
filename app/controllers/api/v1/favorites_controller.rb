@@ -15,6 +15,12 @@ class Api::V1::FavoritesController < ApplicationController
     end
   end
 
+  def destroy
+      favorite = Favorite.find(params[:id])
+      favorite.destroy
+      render status: :no_content, json: {status: 'Image successfully deleted'}
+  end
+
   private
 
   def favorite_params
