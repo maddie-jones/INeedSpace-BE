@@ -1,6 +1,6 @@
 class Api::V1::ImageController < ApplicationController
   def show
-    facade = ImageFacade.new.day_image(Rails.application.credentials.nasa_api_key)
+    facade = ImageFacade.new.day_image
     render json: ImageSerializer.new(facade)
   end
 end
