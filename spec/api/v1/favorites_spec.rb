@@ -33,6 +33,22 @@ describe 'Favorites API' do
     expect(favorite_json["data"]["attributes"]["title"]).to eq("galaxy")
   end
 
+  it 'should not add a Favorite image' do
+    favorite = Favorite.create(title: 'galaxy', url: 'star.image.com', hdurl: 'hdstar.image.com', explanation: 'a picture of the galaxy', media_type: 'image')
+    params = {
+      title: 'galaxy',
+      url: 'star.image.com',
+      hdurl: 'hdstar.image.com',
+      explanation: 'a picture of the galaxy',
+      media_type: 'image'
+    }
+
+    post '/api/v1/favorites', params: params
+
+    favorite_json = JSON.parse(response.body)
+    expect(response).to have_http_status(:bad_request)
+  end
+
   it 'should delete favorite by id' do
     favorite_1 = Favorite.create(title: "star_1", url: "star_img_1.com", hdurl: "star_img_hd_1", explanation: "good photo of star 1", media_type: "image")
 

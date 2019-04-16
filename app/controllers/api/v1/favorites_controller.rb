@@ -7,7 +7,9 @@ class Api::V1::FavoritesController < ApplicationController
   end
 
   def create
-    if favorite_params
+    if Favorite.where(title: favorite_params[:title]) != []
+      render status: :bad_request, json: {status: 'This was already favorited'}
+    elsif favorite_params
       favorite = Favorite.create(favorite_params)
       render status: :created, json: FavoriteSerializer.new(favorite)
     else
